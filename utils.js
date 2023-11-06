@@ -30,4 +30,11 @@ function mousePressed() {
   col1 = color(random(255), random(255), random(255));
   col2 = color(random(255), random(255), random(255));
 }
+// 
+function keyPressed() {
+  if (key == ' ') {
+    move = !move;
+  }
+
+}
 

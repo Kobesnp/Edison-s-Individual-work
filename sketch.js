@@ -2,6 +2,8 @@ let circles = [];
 let scl = 1;
 let col1 = "#ea3e3e";
 let col2 = "#519365";
+let move = false;
+let moveTimer = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -66,8 +68,12 @@ function setup() {
 
 function draw() {
 
+  if (move) {
+    moveTimer += 0.01;
+  }
+
   image(bg, 0, 0);
-  translate((width - scl * 457) / 2, (height - scl * 650) / 2);
+  translate((width - scl * 457) / 2 + width * 0.1 * sin(moveTimer), (height - scl * 650) / 2);
   scale(scl);
 
   // black stroke
